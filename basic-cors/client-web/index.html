@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script>
+        fetch('%endpoint%/greetings')
+            .then(response => {
+                console.log(response);
+                document.getElementById('message').innerText(response);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    </script>
+</head>
+
+<body>
+    <div id="message">
+
+    </div>
+</body>
+
+</html>
