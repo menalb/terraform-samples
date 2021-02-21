@@ -2,14 +2,12 @@
 
 <head>
     <script>
-        fetch('%endpoint%/greetings')
-            .then(response => {
-                console.log(response);
-                document.getElementById('message').innerText(response);
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        fetch('%url%/greetings')
+            .then(response =>
+                response.text().then(text => {
+                    document.getElementById('message').innerHTML = text;
+                }))
+            .catch(error => console.log(error));
     </script>
 </head>
 
